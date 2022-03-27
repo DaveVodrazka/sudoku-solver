@@ -1,0 +1,25 @@
+{
+  "name": "sudoku-solver",
+  "version": "1.0.0",
+  "description": "Program that solves sudoku puzzles. Written in TypeScript.",
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=17.0.0"
+  },
+  "scripts": {
+    "build": "npx tsc && cp src/assets/* public",
+    "dev": "nodemon server.js",
+    "start": "export PORT=80 && npm run build && node server.js"
+  },
+  "author": {
+    "name": "David Vodrážka",
+    "email": "dave.vodrazka@gmail.com",
+    "url": "https://davetheprogrammer.eu"
+  },
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.17.3",
+    "typescript": "^4.6.2"
+  }
+}

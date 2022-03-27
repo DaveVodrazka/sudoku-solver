@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Sudoku Solver</title>
+</head>
+<body>
+  <main>
+    <header>
+      <button id="button-clear">Clear the board</button>
+      <button id="button-solve-sync">Solve instantly</button>
+      <button id="button-solve-animation">Solve with animation</button>
+    </header>
+    <div id="board">
+      <div class="tile"><input type="text" /></div>
+      <div class="tile"><input type="text" value="7" /></div>
+      <div class="tile right"><input type="text" value="3" /></div>
+
+      <div class="tile left"><input type="text" value="1" /></div>
+      <div class="tile"><input type="text" value="4" /></div>
+      <div class="tile right"><input type="text" /></div>
+
+      <div class="tile left"><input type="text" /></div>
+      <div class="tile"><input type="text" /></div>
+      <div class="tile"><input type="text" /></div>
+
+
+      <div class="tile"><input type="text" /></div>
+      <div class="tile"><input type="text" /></div>
+      <div class="tile right"><input type="text" /></div>
+
+      <div class="tile left"><input type="text" value="9" /></div>
+      <div class="tile"><input type="text" /></div>
+      <div class="tile right"><input type="text" value="7" /></div>
+      
+      <div class="tile left"><input type="text" value="1" /></div>
+      <div class="tile"><input type="text" /></div>
+      <div class="tile"><input type="text" /></div>
+
+
+      <div class="tile bottom"><input type="text" value="1" /></div>
+      <div class="tile bottom"><input type="text" value="4" /></div>
+      <div class="tile bottom right"><input type="text" /></div>
+
+      <div class="tile bottom left"><input type="text" /></div>
+      <div class="tile bottom"><input type="text" /></div>
+      <div class="tile bottom right"><input type="text" /></div>
+      
+      <div class="tile bottom left"><input type="text" value="7" /></div>
+      <div class="tile bottom"><input type="text" value="8" /></div>
+      <div class="tile bottom"><input type="text" /></div>
+
+
+      <div class="tile top"><input type="text" /></div>
+      <div class="tile top"><input type="text" value="3" /></div>
+      <div class="tile top right"><input type="text" /></div>
+
+      <div class="tile top left"><input type="text" /></div>
+      <div class="tile top"><input type="text" /></div>
+      <div class="tile top right"><input type="text" /></div>
+      
+      <div class="tile top left"><input type="text" value="5" /></div>
+      <div class="tile top"><input type="text" /></div>
+      <div class="tile top"><input type="text" /></div>
+
+
+      <div class="tile"><input type="text" /></div>
+      <div class="tile"><input type="text" value="1" /></div>
+      <div class="tile right"><input type="text" value="8" /></div>
+
+      <div class="tile left"><input type="text" value="5" /></div>
+      <div class="tile"><input type="text" /></div>
+      <div class="tile right"><input type="text" /></div>
+
+      <div class="tile left"><input type="text" /></div>
+      <div class="tile"><input type="text" value="9" /></div>
+      <div class="tile"><input type="text" /></div>
+
+
+      <div class="tile bottom"><input type="text" value="6" /></div>
+      <div class="tile bottom"><input type="text" /></div>
+      <div class="tile bottom right"><input type="text" value="5" /></div>
+
+      <div class="tile bottom left"><input type="text" /></div>
+      <div class="tile bottom"><input type="text" value="7" /></div>
+      <div class="tile bottom right"><input type="text" value="1" /></div>
+
+      <div class="tile bottom left"><input type="text" value="2" /></div>
+      <div class="tile bottom"><input type="text" /></div>
+      <div class="tile bottom"><input type="text" /></div>
+
+
+      <div class="tile top"><input type="text" /></div>
+      <div class="tile top"><input type="text" /></div>
+      <div class="tile top right"><input type="text" /></div>
+
+      <div class="tile top left"><input type="text" /></div>
+      <div class="tile top"><input type="text" value="9" /></div>
+      <div class="tile top right"><input type="text" /></div>
+
+      <div class="tile top left"><input type="text" /></div>
+      <div class="tile top"><input type="text" value="5" /></div>
+      <div class="tile top"><input type="text" value="2" /></div>
+
+
+      <div class="tile"><input type="text" value="9" /></div>
+      <div class="tile"><input type="text" value="5" /></div>
+      <div class="tile right"><input type="text" value="2" /></div>
+
+      <div class="tile left"><input type="text" value="8" /></div>
+      <div class="tile"><input type="text" value="1" /></div>
+      <div class="tile right"><input type="text" value="4" /></div>
+
+      <div class="tile left"><input type="text" /></div>
+      <div class="tile"><input type="text" /></div>
+      <div class="tile"><input type="text" /></div>
+
+
+      <div class="tile"><input type="text" /></div>
+      <div class="tile"><input type="text" /></div>
+      <div class="tile right"><input type="text" /></div>
+
+      <div class="tile left"><input type="text" /></div>
+      <div class="tile"><input type="text" value="5" /></div>
+      <div class="tile right"><input type="text" /></div>
+
+      <div class="tile left"><input type="text" /></div>
+      <div class="tile"><input type="text" /></div>
+      <div class="tile"><input type="text" /></div>
+    </div>
+  </main>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
