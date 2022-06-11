@@ -15,16 +15,26 @@ const init = () => {
   const buttonSync = document.getElementById("button-solve-sync");
   const buttonAsync = document.getElementById("button-solve-animation");
 
+  const invalidBoardMessage = "Invalid Sudoku";
+
   buttonClear.addEventListener("click", () => {
     visualiser.clear();
   });
   buttonSync.addEventListener("click", () => {
     visualiser.collectValues();
-    solver.solve();
+    if (solver.isValid()) {
+      solver.solve();
+    } else {
+      visualiser.showMessage(invalidBoardMessage);
+    }
   });
   buttonAsync.addEventListener("click", () => {
     visualiser.collectValues();
-    solver.solve(10);
+    if (solver.isValid()) {
+      solver.solve(10);
+    } else {
+      visualiser.showMessage(invalidBoardMessage);
+    }
   });
 };
 

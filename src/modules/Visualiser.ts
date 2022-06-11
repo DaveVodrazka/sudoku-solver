@@ -4,6 +4,7 @@ export class Visualiser {
   private inputs: InputNodeList;
   private grid: Grid;
   private root: HTMLElement;
+  private toast: HTMLElement;
   private rowLength: number;
 
   constructor(root: HTMLElement) {
@@ -12,6 +13,7 @@ export class Visualiser {
     this.inputs = this.root.querySelectorAll("input");
     this.grid = new Grid();
     this.grid.subscribe(this.update.bind(this));
+    this.toast = document.getElementById("toast");
   }
 
   private walkTheBoard(callback: BoardCallback): void {
@@ -29,7 +31,6 @@ export class Visualiser {
       this.grid.setValue(x, y, value);
     };
     this.walkTheBoard(callback);
-    console.log(this.grid.snapshot);
   }
 
   public clear() {
@@ -57,5 +58,15 @@ export class Visualiser {
 
   private coordinatesToIndex(x: number, y: number): number {
     return x * this.rowLength + y;
+  }
+
+  /**
+   * Display given message for some time
+   * @param msg 
+   */
+  public showMessage(msg: string): void {
+    this.toast.innerText = msg;
+    this.toast.classList.add("show");
+    setTimeout(() => this.toast.classList.remove("show"), 1500);
   }
 }

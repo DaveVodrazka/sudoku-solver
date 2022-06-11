@@ -18,6 +18,26 @@ header {
   margin: 5px;
 }
 
+#toast {
+  position: absolute;
+  width: 50vw;
+  height: 25vh;
+  line-height: 25vh;
+  left: 25vw;
+  top: 37.5vh;
+  background: red;
+  color: white;
+  display: none;
+  text-align: center;
+  font-size: 5vw;
+  border-radius: 5vw;
+  border: black solid 2px;
+}
+
+#toast.show {
+  display: block;
+}
+
 button {
   display: block;
   width: calc(100% / 3);

@@ -3,11 +3,11 @@ import { Grid } from "./Grid.js";
 export class Solver {
   private grid: Grid;
   private values: NumberList;
-  private delay: number | undefined;
+  private delay?: number;
   private done: boolean;
 
   constructor() {
-    this.values = [1,2,3,4,5,6,7,8,9];
+    this.values = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     this.grid = new Grid();
     this.delay = 0;
     this.done = false;
@@ -84,6 +84,36 @@ export class Solver {
 
     if (row.includes(n) || column.includes(n) || square.includes(n)) {
       return false;
+    }
+    return true;
+  }
+
+  private hasDuplicate(arr: Array<number>): boolean {
+    const nonZeroArr = arr.filter((n) => n != 0);
+    return nonZeroArr.length !== new Set(nonZeroArr).size;
+  }
+
+  private hasInvalidChar(arr: Array<any>): boolean {
+    const isValid = (char: any): boolean => {
+      return typeof char === "number" && char >= 0 && char < 10;
+    };
+    return !arr.every(isValid);
+  }
+
+  /**
+   * Checks for duplicates and invalid characters.
+   * @return true if valid sudoku board, false otherwise
+   */
+  public isValid(): boolean {
+    for (let x = 0; x < 9; x++) {
+      const a = 3 * (x % 3);
+      const b = Math.floor(x / 3) * 3;
+      const square = this.grid.getSquare(a, b);
+      const row = this.grid.getRow(x);
+      const column = this.grid.getColumn(x);
+      if (this.hasDuplicate(row) || this.hasDuplicate(column) || this.hasDuplicate(square) || this.hasInvalidChar(row)) {
+        return false;
+      }
     }
     return true;
   }
