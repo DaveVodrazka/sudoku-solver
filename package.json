@@ -7,7 +7,7 @@
     "node": ">=17.0.0"
   },
   "scripts": {
-    "build": "npx tsc && cp src/assets/* public",
+    "build": "npx tsc && cp src/assets/* docs",
     "dev": "nodemon server.js",
     "start": "export PORT=80 && npm run build && node server.js"
   },
